@@ -1,22 +1,22 @@
 {
-  "name": "@akashrajpurohit/ts-npm-template",
-  "version": "2.2.4",
-  "description": "A project template to bootstrap NPM package with Typescript",
+  "name": "Next-modules",
+  "version": "0.0.1",
+  "description": "A unified module system for Next.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AkashRajpurohit/ts-npm-template.git"
+    "url": "https://github.com/katungi/next-modules.git"
   },
-  "homepage": "https://github.com/AkashRajpurohit/ts-npm-template",
-  "bugs": "https://github.com/AkashRajpurohit/ts-npm-template/issues",
+  "homepage": "https://github.com/katungi/next-modules",
+  "bugs": "https://github.com/katungi/next-modules/issues",
   "author": {
-    "name": "AkashRajpurohit",
-    "email": "me@akashrajpurohit.com",
-    "url": "https://akashrajpurohit.com"
+    "name": "Daniel Denis",
+    "email": "dankatdennis@gmail.com",
+    "url": "https://katungi.vercel.app"
   },
   "keywords": [
-    "typescript-template",
-    "npm-boilerplate",
-    "changesets-boilerplate"
+    "Next.js",
+    "module",
+    "module system"
   ],
   "license": "MIT",
   "main": "./dist/index.js",
