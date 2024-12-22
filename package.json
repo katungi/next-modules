@@ -71,5 +71,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "inquirer": "^12.3.0"
   }
 }
