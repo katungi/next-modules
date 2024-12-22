@@ -1,0 +1,48 @@
+name: Build and Deploy Docs 📚
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🧳
+        uses: actions/checkout@v4
+
+      - name: Setup PNPM ⚙️
+        uses: AkashRajpurohit/.github/.github/actions/setup-pnpm@main
+        with:
+          node_version: 20
+          pnpm_version: 8
+
+      - name: Install dependencies ⏬
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build Docs ⏰
+        run: pnpm run build:docs
+
+      - name: Upload Pages Artifact ☁️
+        uses: actions/upload-pages-artifact@v3
+        id: deployment
+        with:
+          path: ./docs  # This should be your TypeDoc "out" path.
+
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages 🚀
+        id: deployment
+        uses: actions/deploy-pages@v4
